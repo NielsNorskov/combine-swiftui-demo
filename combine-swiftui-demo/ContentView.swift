@@ -13,7 +13,7 @@ struct ContentView: View {
     
     @State var searchWord = ""
     @State var searchItemListVM = SearchItemListViewModel([])
-    @State var fetchJSONSubscriber: AnyCancellable?
+    @State var fetchJSONSubscriber: AnyCancellable? // ???
     
     var body: some View {
         VStack {
