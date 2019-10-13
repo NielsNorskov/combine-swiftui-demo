@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B8C3C0EA235244140077E998 /* SearchResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C3C0E9235244140077E998 /* SearchResultView.swift */; };
 		B8DF324D235207E000BAF7C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DF324C235207E000BAF7C6 /* AppDelegate.swift */; };
 		B8DF324F235207E000BAF7C6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DF324E235207E000BAF7C6 /* SceneDelegate.swift */; };
 		B8DF3251235207E000BAF7C6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DF3250235207E000BAF7C6 /* ContentView.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B8C3C0E9235244140077E998 /* SearchResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultView.swift; sourceTree = "<group>"; };
 		B8DF3249235207E000BAF7C6 /* combine-swiftui-demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "combine-swiftui-demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8DF324C235207E000BAF7C6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B8DF324E235207E000BAF7C6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +49,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B8C3C0E7235243990077E998 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B8DF326423520E8000BAF7C6 /* SearchResult.swift */,
+				B8DF326623520E8800BAF7C6 /* SearchItemViewModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B8C3C0E8235243B20077E998 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B8DF326223520E7100BAF7C6 /* URLSession+Extensions.swift */,
+				B8DF326023520E6700BAF7C6 /* URLRequest+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		B8DF3240235207E000BAF7C6 = {
 			isa = PBXGroup;
 			children = (
@@ -66,14 +86,13 @@
 		B8DF324B235207E000BAF7C6 /* combine-swiftui-demo */ = {
 			isa = PBXGroup;
 			children = (
-				B8DF326823520F0700BAF7C6 /* API.swift */,
-				B8DF326623520E8800BAF7C6 /* SearchItemViewModel.swift */,
-				B8DF326423520E8000BAF7C6 /* SearchResult.swift */,
-				B8DF326223520E7100BAF7C6 /* URLSession+Extensions.swift */,
-				B8DF326023520E6700BAF7C6 /* URLRequest+Extensions.swift */,
+				B8C3C0E8235243B20077E998 /* Extensions */,
+				B8C3C0E7235243990077E998 /* Models */,
+				B8DF3250235207E000BAF7C6 /* ContentView.swift */,
+				B8C3C0E9235244140077E998 /* SearchResultView.swift */,
 				B8DF324C235207E000BAF7C6 /* AppDelegate.swift */,
 				B8DF324E235207E000BAF7C6 /* SceneDelegate.swift */,
-				B8DF3250235207E000BAF7C6 /* ContentView.swift */,
+				B8DF326823520F0700BAF7C6 /* API.swift */,
 				B8DF3252235207E200BAF7C6 /* Assets.xcassets */,
 				B8DF3257235207E200BAF7C6 /* LaunchScreen.storyboard */,
 				B8DF325A235207E200BAF7C6 /* Info.plist */,
@@ -168,6 +187,7 @@
 				B8DF324F235207E000BAF7C6 /* SceneDelegate.swift in Sources */,
 				B8DF326523520E8000BAF7C6 /* SearchResult.swift in Sources */,
 				B8DF326923520F0800BAF7C6 /* API.swift in Sources */,
+				B8C3C0EA235244140077E998 /* SearchResultView.swift in Sources */,
 				B8DF3251235207E000BAF7C6 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

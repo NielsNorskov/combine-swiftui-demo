@@ -9,7 +9,7 @@
 import Foundation
 import Combine
 
-class SearchItemListViewModel: ObservableObject
+class SearchItemListViewModel
 {
     let searchItemList: [SearchItemViewModel]
     
@@ -30,11 +30,17 @@ extension SearchItemListViewModel
 struct SearchItemViewModel: Identifiable
 {
     let id: String // Unique id required by SwiftUI List.
-    let searchItem: SearchItem
+    let searchItem: SearchItem?
 }
 
 extension SearchItemViewModel
 {
+    init()
+    {
+        id = UUID().uuidString
+        searchItem = nil
+    }
+    
     init(_ item: SearchItem)
     {
         id = UUID().uuidString
@@ -42,7 +48,15 @@ extension SearchItemViewModel
     }
     
     var title: String {
-        return searchItem.title ?? ""
+        return searchItem?.title ?? ""
+    }
+    
+    var description: String {
+        return searchItem?.description ?? ""
+    }
+    
+    var thumbnailURL: URL? {
+        return searchItem?.thumbnailURL
     }
     
 //    var title: AnyPublisher<String?, Never> {
