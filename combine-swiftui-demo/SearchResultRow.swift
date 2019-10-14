@@ -14,16 +14,15 @@ struct SearchResultRow: View {
     let searchItemViewModel: SearchItemViewModel
     
     @State var imageSubscriber: AnyCancellable?
-    @State var image = Image("placeholder")
+    @State var thumbnail = UIImage(named: "placeholder")!
    
-    init(_ searchItemViewModel: SearchItemViewModel)
-    {
+    init(_ searchItemViewModel: SearchItemViewModel) {
         self.searchItemViewModel = searchItemViewModel
     }
     
     var body: some View {
         HStack {
-            self.image
+            Image(uiImage: thumbnail)
                 .resizable()
                 .frame(width: 60, height: 45, alignment: .leading)
             VStack {
@@ -43,9 +42,8 @@ struct SearchResultRow: View {
         
         imageSubscriber = URLSession.shared.fetchImage(for: url)
             .receive(on: DispatchQueue.main)
-            .compactMap {$0}
-            .map {Image(uiImage: $0)}
-            .assign(to: \.image, on: self)
+            .compactMap { $0 }
+            .assign(to: \.thumbnail, on: self)
     }
 }
 
