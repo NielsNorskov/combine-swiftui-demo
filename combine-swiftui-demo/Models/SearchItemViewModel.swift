@@ -48,11 +48,11 @@ extension SearchItemViewModel
     }
     
     var title: String {
-        return searchItem?.title ?? ""
+        return searchItem?.title ?? "[Title Text]"
     }
     
     var description: String {
-        return searchItem?.description ?? ""
+        return searchItem?.description ?? "[Description Text]"
     }
     
     var thumbnailURL: URL? {

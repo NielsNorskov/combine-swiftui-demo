@@ -49,6 +49,6 @@ struct SearchResultRow: View {
 
 struct SearchResultView_Previews: PreviewProvider {
     static var previews: some View {
-        SearchResultRow(SearchItemViewModel())
+        SearchResultRow(SearchItemViewModel()).previewLayout(.sizeThatFits)
     }
 }
