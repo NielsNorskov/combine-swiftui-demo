@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B82AA5222354FB0D00800DAE /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82AA5212354FB0D00800DAE /* DetailView.swift */; };
 		B8C3C0EA235244140077E998 /* SearchResultRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C3C0E9235244140077E998 /* SearchResultRow.swift */; };
 		B8DF324D235207E000BAF7C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DF324C235207E000BAF7C6 /* AppDelegate.swift */; };
 		B8DF324F235207E000BAF7C6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DF324E235207E000BAF7C6 /* SceneDelegate.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B82AA5212354FB0D00800DAE /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		B8C3C0E9235244140077E998 /* SearchResultRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultRow.swift; sourceTree = "<group>"; };
 		B8DF3249235207E000BAF7C6 /* combine-swiftui-demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "combine-swiftui-demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8DF324C235207E000BAF7C6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 				B8DF3257235207E200BAF7C6 /* LaunchScreen.storyboard */,
 				B8DF325A235207E200BAF7C6 /* Info.plist */,
 				B8DF3254235207E200BAF7C6 /* Preview Content */,
+				B82AA5212354FB0D00800DAE /* DetailView.swift */,
 			);
 			path = "combine-swiftui-demo";
 			sourceTree = "<group>";
@@ -183,6 +186,7 @@
 				B8DF326323520E7100BAF7C6 /* URLSession+Extensions.swift in Sources */,
 				B8DF324D235207E000BAF7C6 /* AppDelegate.swift in Sources */,
 				B8DF326123520E6700BAF7C6 /* URLRequest+Extensions.swift in Sources */,
+				B82AA5222354FB0D00800DAE /* DetailView.swift in Sources */,
 				B8DF326723520E8800BAF7C6 /* SearchItemViewModel.swift in Sources */,
 				B8DF324F235207E000BAF7C6 /* SceneDelegate.swift in Sources */,
 				B8DF326523520E8000BAF7C6 /* SearchResult.swift in Sources */,

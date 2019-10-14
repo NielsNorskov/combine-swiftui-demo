@@ -16,19 +16,22 @@ struct ContentView: View {
     @State var fetchJSONSubscriber: AnyCancellable? // ???
     
     var body: some View {
-        VStack {
-            HStack {
-                TextField("Search NASA images", text: $searchWord)
-                Button(action: {
-                    print("searching for \(self.searchWord)")
-                    self.performSearch(for: self.searchWord)
-                }) {
-                    Text("Search")
+        NavigationView {
+            VStack {
+                HStack {
+                    TextField("Search NASA images", text: $searchWord)
+                    Button(action: {
+                        print("searching for \(self.searchWord)")
+                        self.performSearch(for: self.searchWord)
+                    }) {
+                        Text("Search")
+                    }
                 }
-            }
-            Spacer()
-            List(searchItemListVM.searchItemList) { item in
-                SearchResultRow(item)
+                List(searchItemListVM.searchItemList) { item in
+                    NavigationLink(destination: DetailView(searchItem: item)) {
+                        SearchResultRow(item)
+                    }
+                }
             }
         }
     }
