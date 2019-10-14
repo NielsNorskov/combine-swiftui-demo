@@ -28,7 +28,7 @@ struct ContentView: View {
             }
             Spacer()
             List(searchItemListVM.searchItemList) { item in
-                SearchResultView(item)
+                SearchResultRow(item)
             }
         }
     }

@@ -9,28 +9,16 @@
 import SwiftUI
 import Combine
 
-struct SearchResultView: View {
+struct SearchResultRow: View {
     
     let searchItemViewModel: SearchItemViewModel
     
-    @State var url: URL?
-    @State var image = Image("placeholder")
     @State var imageSubscriber: AnyCancellable?
-    
+    @State var image = Image("placeholder")
+   
     init(_ searchItemViewModel: SearchItemViewModel)
     {
         self.searchItemViewModel = searchItemViewModel
-    }
-    
-    func loadImage()
-    {
-        guard let url = searchItemViewModel.thumbnailURL else { return }
-        
-        imageSubscriber = URLSession.shared.fetchImage(for: url, placeholder: #imageLiteral(resourceName: "placeholder"))
-            .receive(on: DispatchQueue.main)
-            .sink { dlimage in
-                self.image = Image(uiImage: dlimage ?? UIImage(named: "placeholder")!)
-            }
     }
     
     var body: some View {
@@ -44,13 +32,25 @@ struct SearchResultView: View {
                 Text(searchItemViewModel.description)
                     .lineLimit(2)
             }
-        }.onAppear(perform: loadImage)
-            .onDisappear { self.imageSubscriber?.cancel() }
+        }
+        .onAppear {self.loadImage()}
+        .onDisappear {self.imageSubscriber?.cancel()}
+    }
+    
+    private func loadImage() {
+        
+        guard let url = searchItemViewModel.thumbnailURL else { return }
+        
+        imageSubscriber = URLSession.shared.fetchImage(for: url)
+            .receive(on: DispatchQueue.main)
+            .compactMap {$0}
+            .map {Image(uiImage: $0)}
+            .assign(to: \.image, on: self)
     }
 }
 
 struct SearchResultView_Previews: PreviewProvider {
     static var previews: some View {
-        SearchResultView(SearchItemViewModel())
+        SearchResultRow(SearchItemViewModel())
     }
 }
