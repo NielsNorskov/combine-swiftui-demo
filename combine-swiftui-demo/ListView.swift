@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  ListView.swift
 //  combine-swiftui-demo
 //
 //  Created by Niels Nørskov on 12/10/2019.
@@ -9,7 +9,7 @@
 import SwiftUI
 import Combine
 
-struct ContentView: View {
+struct ListView: View {
     
     @State var searchWord = ""
     @State var searchItemListVM = SearchItemListViewModel([])
@@ -63,6 +63,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(searchWord: "")
+        ListView(searchWord: "")
     }
 }
