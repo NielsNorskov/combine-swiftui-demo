@@ -13,7 +13,7 @@ struct ListView: View {
     
     @State var searchWord = ""
     @State var searchItemListVM = SearchItemListViewModel([])
-    @State var fetchJSONSubscriber: AnyCancellable? // ???
+    @State var fetchJSONSubscriber: AnyCancellable?
     
     var body: some View {
         NavigationView {
@@ -63,6 +63,6 @@ struct ListView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ListView(searchWord: "")
+        ListView()
     }
 }
