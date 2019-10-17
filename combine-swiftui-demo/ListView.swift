@@ -28,7 +28,7 @@ struct ListView: View {
                     }
                 }
                 List(searchItemListVM.searchItemList) { item in
-                    NavigationLink(destination: DetailView(searchItem: item)) {
+                    NavigationLink(destination: DetailView(searchItemViewModel: item)) {
                         SearchResultRow(item)
                     }
                 }

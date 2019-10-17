@@ -7,16 +7,41 @@
 //
 
 import SwiftUI
+import Combine
 
 struct DetailView: View {
-    let searchItem: SearchItemViewModel
+    
+    let searchItemViewModel: SearchItemViewModel
+    
+    @State var imageSubscriber: AnyCancellable?
+    @State var thumbnail = UIImage(named: "placeholder")!
+    
     var body: some View {
-        Text("Hello Search Item")
+        VStack {
+            Image(uiImage: thumbnail)
+                .resizable()
+                .scaledToFit()
+            Text(searchItemViewModel.title)
+            Text(searchItemViewModel.description)
+            Spacer()
+        }.onAppear() {
+            self.loadImage()
+        }
+    }
+    
+    private func loadImage() {
+        
+        guard let url = searchItemViewModel.thumbnailURL else { return }
+        
+        imageSubscriber = URLSession.shared.fetchImage(for: url)
+            .receive(on: DispatchQueue.main)
+            .compactMap { $0 }
+            .assign(to: \.thumbnail, on: self)
     }
 }
 
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailView(searchItem: SearchItemViewModel())
+        DetailView(searchItemViewModel: SearchItemViewModel())
     }
 }
