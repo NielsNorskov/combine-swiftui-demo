@@ -21,7 +21,6 @@ struct ListView: View {
                 HStack {
                     TextField("Search NASA images", text: $searchWord)
                     Button(action: {
-                        print("searching for \(self.searchWord)")
                         self.performSearch(for: self.searchWord)
                     }) {
                         Text("Search")
