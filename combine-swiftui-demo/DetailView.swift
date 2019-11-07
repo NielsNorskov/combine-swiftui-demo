@@ -14,7 +14,7 @@ struct DetailView: View {
     let searchItemViewModel: SearchItemViewModel
     
     @State var imageSubscriber: AnyCancellable?
-    @State var thumbnail = UIImage(named: "placeholder")!
+    @State var thumbnail = UIImage(systemName: "photo")!
     
     var body: some View {
         VStack {
