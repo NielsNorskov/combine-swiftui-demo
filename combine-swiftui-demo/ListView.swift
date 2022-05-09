@@ -19,19 +19,20 @@ struct ListView: View {
         NavigationView {
             VStack {
                 HStack {
-                    TextField("Search NASA images", text: $searchWord)
+                    TextField("Search term", text: $searchWord)
                     Button(action: {
                         self.performSearch(for: self.searchWord)
                     }) {
                         Text("Search")
                     }
-                }
+                }.padding(.horizontal, 25)
                 List(searchItemListVM.searchItemList) { item in
                     NavigationLink(destination: DetailView(searchItemViewModel: item)) {
                         SearchResultRow(item)
                     }
                 }
-            }
+            }.navigationTitle("Search NASA")
+                
         }
     }
     
@@ -43,7 +44,7 @@ struct ListView: View {
         
         let resource = Resource<SearchResult>(request: request)
         
-        fetchJSONSubscriber?.cancel() // Cancel the activity.
+        fetchJSONSubscriber?.cancel() // Cancel previous activity.
         fetchJSONSubscriber = URLSession.shared.fetchJSON(for: resource)
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { completion in
